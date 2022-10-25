@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@init/api-interfaces';
+import { Page } from '@dibaba/shared-interfaces';
 
 @Component({
-  selector: 'init-root',
+  selector: 'dibaba-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  hello$ = this.http.get<Page[]>('/api/pages');
   constructor(private http: HttpClient) {}
 }
